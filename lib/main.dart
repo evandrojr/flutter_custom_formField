@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:list_selector/counter.dart';
 import 'package:list_selector/counter_form_field.dart';
 
 void main() => runApp(MyApp());

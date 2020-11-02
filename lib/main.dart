@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Text('Please fill in your name and age'),
                 TextFormField(
-                  autovalidate: true,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   onSaved: (value) => this._name = value,
                   validator: (value) {
                     if (value.length < 3) {

@@ -46,11 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CounterFormField(
                   autovalidate: true,
-                  validator: (value) {
-                    if (value < 0) {
-                      return 'Negative values not supported';
-                    }
-                  },
+                  validator: (value) =>
+                      value < 0 ? 'Negative values not supported' : null,
                   onSaved: (value) => this._age = value,
                 ),
                 RaisedButton(

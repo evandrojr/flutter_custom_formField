@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:list_selector/counter.dart';
 import 'package:list_selector/counter_form_field.dart';
 
 void main() => runApp(MyApp());
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Text('Please fill in your name and age'),
                 TextFormField(
-                  autovalidate: true,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   onSaved: (value) => this._name = value,
                   validator: (value) {
                     if (value.length < 3) {
@@ -47,11 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CounterFormField(
                   autovalidate: true,
-                  validator: (value) {
-                    if (value < 0) {
-                      return 'Negative values not supported';
-                    }
-                  },
+                  validator: (value) =>
+                      value < 0 ? 'Negative values not supported' : null,
                   onSaved: (value) => this._age = value,
                 ),
                 RaisedButton(

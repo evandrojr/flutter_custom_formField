@@ -10,7 +10,7 @@ class CounterFormField extends FormField<int> {
           onSaved: onSaved,
           validator: validator,
           initialValue: initialValue,
-          autovalidate: autovalidate,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           builder: (FormFieldState<int> state) {
             return Column(
               children: <Widget>[
